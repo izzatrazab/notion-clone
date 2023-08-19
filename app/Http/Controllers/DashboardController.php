@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $projects = Project::where('user_id',  auth()->id())->get();
 
         return Inertia::render('Dashboard', [
-            'project' => $projects
+            'projects' => $projects
         ]);
     }
 }

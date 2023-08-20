@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-
+import Project from '@/Components/Project/Project.vue'
 </script>
 
 <template>
@@ -14,7 +14,9 @@ import AppLayout from '@/Layouts/AppLayout.vue';
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div id='main' class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
-                    <table class="border-collapse table-auto w-full text-sm">
+                    <Project/>
+                    
+                    <!-- <table class="border-collapse table-auto w-full text-sm">
                         <thead>
                             <tr>
                                 <th
@@ -54,7 +56,7 @@ import AppLayout from '@/Layouts/AppLayout.vue';
                                 <td colspan='4' class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">add project</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </div>

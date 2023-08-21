@@ -10,9 +10,9 @@ class Block extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //     'name', 'status', 'owner', 'priority'
-    // ];
+    protected $fillable = [
+        'user_id', 'type', 'json'
+    ];
 
     // protected $casts = [
     //     'start_date' => 'datetime: Y-m-d',

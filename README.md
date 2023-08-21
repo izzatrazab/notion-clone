@@ -14,6 +14,7 @@ Low fidelity MVP. The target is to somehow clone notion.
 2. Able to add deadline (can be one date or period date).
 3. Able to search through the blocks.
 4. Able to add custom column.
+5. Easy access to other pages using sidebar.
 
 ## Non Functional Requirement
 kiv

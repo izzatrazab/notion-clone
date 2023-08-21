@@ -31,13 +31,14 @@ const editor = new EditorJS({
 })
 
 const form = reactive({
-    blocks: []
+    blocks:''
 })
 
 function saveEditor() {
     editor.save().then((outputData) => {
-        form.blocks = [...form.blocks, ...outputData.blocks]
-        // router.post('/api/block', this.form)
+        form.blocks = JSON.stringify(outputData.blocks[0])
+        // console.log(JSON.stringify(form.blocks[0]));
+        router.post('/api/block', form)
     }).catch((error) => {
         console.log('Saving failed: ', error)
     });

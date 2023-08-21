@@ -33,6 +33,11 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
   
-    //store block
-    Route::post('api/block', [BlockController::class,'store'])->name('block');
+
+
+    // fetch block
+    Route::get('api/block', [BlockController::class,'show']);
+
+    // store block
+    Route::post('api/block', [BlockController::class,'store']);
 });

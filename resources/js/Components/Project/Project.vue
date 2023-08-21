@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import EditorJS from '@editorjs/editorjs';
 import Table from '@editorjs/table';
-import { reactive, onMounted } from 'vue'
+import { reactive } from 'vue'
 import { router } from '@inertiajs/vue3'
 
 const editor = new EditorJS({
@@ -25,16 +25,8 @@ const editor = new EditorJS({
                     "withHeadings": true,
                     "content": [["Kine", "Pigs", "Chicken"], ["1 pcs", "3 pcs", "12 pcs"], ["100$", "200$", "150$"]]
                 }
-            },
-            {
-                "id": "123",
-                "type": "table",
-                "data": {
-                    "withHeadings": true,
-                    "content": [["Kine", "Pigs", "Chicken"], ["1 pcs", "3 pcs", "12 pcs"], ["100$", "200$", "150$"]]
-                }
             }
-        ],
+        ]
     }
 })
 

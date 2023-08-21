@@ -14,7 +14,6 @@ import Project from '@/Components/Project/Project.vue'
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div id='main' class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    {{ blocks }}
                     <Project/>
                     
                     <!-- <table class="border-collapse table-auto w-full text-sm">
@@ -69,12 +68,3 @@ import Project from '@/Components/Project/Project.vue'
     /* color: white; */
     padding: 10px;
 }</style>
-
-<script>
-export default {
-    props: {
-        blocks: Array,
-        tasks: Array
-    }
-}
-</script>

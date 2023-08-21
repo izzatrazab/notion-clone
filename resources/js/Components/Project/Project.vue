@@ -1,10 +1,12 @@
 <script setup lang='ts'>
 import EditorJS, { OutputBlockData } from '@editorjs/editorjs';
 import Table from '@editorjs/table';
+import Warning from '@editorjs/warning';
 import { reactive, onMounted } from 'vue'
 import { router } from '@inertiajs/vue3'
+import axios from 'axios';
 
-let editor: EditorJS = null
+let editor: EditorJS
 let form: { blocks: string } = reactive({
     blocks: ''
 })
@@ -31,6 +33,7 @@ function createEditor(blocks: { id: string, type: string, data: { withHeadings: 
                     withHeadings: true,
                 },
             },
+            Warning
         },
         data: {
             blocks: [blocks as OutputBlockData<string, any>]
@@ -38,14 +41,22 @@ function createEditor(blocks: { id: string, type: string, data: { withHeadings: 
     })
 }
 
+async function getBlock() {
+    const {data} = await axios.get('/api/block')
+    createEditor(JSON.parse(data.blocks[0].json))
+    
+}
+
 onMounted(() => {
-    router.get('/api/block', {}, {
-        preserveState: true,
-        onSuccess: ({ props }) => {
-            console.log(props.blocks);
-            createEditor(JSON.parse(props.blocks[0].json))
-        },
-    })
+    getBlock()
+
+    // router.get('/api/block', {}, {
+    //     preserveState: true,
+    //     onSuccess: ({ props }) => {
+    //         console.log(props.blocks);
+    //         createEditor(JSON.parse(props.blocks[0].json))
+    //     },
+    // })
 })
 
 </script>

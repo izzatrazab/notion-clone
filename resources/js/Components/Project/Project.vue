@@ -1,48 +1,52 @@
 <script setup lang='ts'>
-import EditorJS from '@editorjs/editorjs';
+import EditorJS, { OutputBlockData } from '@editorjs/editorjs';
 import Table from '@editorjs/table';
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { router } from '@inertiajs/vue3'
 
-const editor = new EditorJS({
-    holder: 'editorjs',
-    tools: {
-        table: {
-            class: Table,
-            inlineToolbar: true,
-            config: {
-                // rows: 3,
-                cols: 3,
-                withHeadings: true,
-            },
-        },
-    },
-    data: {
-        blocks: [
-            {
-                "type": "table",
-                "data": {
-                    "withHeadings": true,
-                    "content": [["Kine", "Pigs", "Chicken"], ["1 pcs", "3 pcs", "12 pcs"], ["100$", "200$", "150$"]]
-                }
-            }
-        ]
-    }
-})
-
-const form = reactive({
-    blocks:''
+let editor: EditorJS = null
+let form: { blocks: string } = reactive({
+    blocks: ''
 })
 
 function saveEditor() {
     editor.save().then((outputData) => {
         form.blocks = JSON.stringify(outputData.blocks[0])
-        // console.log(JSON.stringify(form.blocks[0]));
         router.post('/api/block', form)
     }).catch((error) => {
         console.log('Saving failed: ', error)
     });
 }
+
+function createEditor(blocks: { id: string, type: string, data: { withHeadings: boolean, content: String[][] } }) {
+    editor = new EditorJS({
+        holder: 'editorjs',
+        tools: {
+            table: {
+                class: Table,
+                inlineToolbar: true,
+                config: {
+                    // rows: 3,
+                    cols: 3,
+                    withHeadings: true,
+                },
+            },
+        },
+        data: {
+            blocks: [blocks as OutputBlockData<string, any>]
+        }
+    })
+}
+
+onMounted(() => {
+    router.get('/api/block', {}, {
+        preserveState: true,
+        onSuccess: ({ props }) => {
+            console.log(props.blocks);
+            createEditor(JSON.parse(props.blocks[0].json))
+        },
+    })
+})
 
 </script>
 <template>

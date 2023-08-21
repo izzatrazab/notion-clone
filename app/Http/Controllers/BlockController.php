@@ -20,7 +20,8 @@ class BlockController extends Controller
     public function show(Request $request)
     {
         $blocks = Block::select('json')->where('user_id', auth()->id())->get();
-        return Inertia::render('Dashboard',[
+
+        return response()->json([
             'blocks' => $blocks
         ]);
         // return $blocks;

@@ -32,12 +32,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
-    // Route::get('/dashboard', function () {
-    //     return Inertia::render('Dashboard', [
-    //         'project' => ['status'],
-    //         'tasks' => []
-    //     ]);
-    // })->name('dashboard');
-
+  
+    //store block
     Route::post('api/block', [BlockController::class,'store'])->name('block');
 });

@@ -3,8 +3,8 @@
 The target is to somehow clone notion.
 
 Languages/Framework/Database:
-- Setup using Laravel Jetstream
 - Laravel (with Inertia)
+- Scaffold using Laravel Jetstream
 - Vue (typescript)
 - Mysql (xampp)
 

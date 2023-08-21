@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BlockController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -37,4 +38,6 @@ Route::middleware([
     //         'tasks' => []
     //     ]);
     // })->name('dashboard');
+
+    Route::post('api/block', [BlockController::class,'store'])->name('block');
 });

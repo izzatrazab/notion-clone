@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Block;
 use App\Models\User;
 use Inertia\Inertia;
 
@@ -10,10 +10,10 @@ class DashboardController extends Controller
 {
     public function index(User $id){
         // $projects = Project::all();
-        $projects = Project::where('user_id',  auth()->id())->get();
+        $blocks = Block::where('user_id',  auth()->id())->get();
 
         return Inertia::render('Dashboard', [
-            'projects' => $projects
+            'blocks' => $blocks
         ]);
     }
 }

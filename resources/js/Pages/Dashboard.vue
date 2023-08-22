@@ -1,6 +1,7 @@
 <script setup lang='ts'>
-import AppLayout from '@/Layouts/AppLayout.vue'
-import Project from '@/Components/Project/Project.vue'
+import AppLayout from '../Layouts/AppLayout.vue'
+import Project from '../Components/Project/Project.vue'
+
 </script>
 
 <template>
@@ -10,13 +11,12 @@ import Project from '@/Components/Project/Project.vue'
                 Dashboard
             </h2>
         </template>
-        
+
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div id='main' class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Button label="Check" icon="pi pi-check" />
                     <Project />
-                    
+
                     <!-- <table class="border-collapse table-auto w-full text-sm">
                         <thead>
                             <tr>

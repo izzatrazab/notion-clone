@@ -38,8 +38,6 @@
     "dependencies": {
         "@editorjs/editorjs": "^2.27.2",
         "@editorjs/table": "^2.2.2",
-        "@editorjs/warning": "^1.3.0",
-        "primeicons": "^6.0.1",
-        "primevue": "^3.32.1"
+        "@editorjs/warning": "^1.3.0"
     }
 }

@@ -2,7 +2,7 @@
 import EditorJS, { OutputBlockData } from '@editorjs/editorjs';
 import Table from '@editorjs/table';
 import Warning from '@editorjs/warning';
-import { reactive, onMounted } from 'vue'
+import { reactive, onBeforeMount } from 'vue'
 import { router } from '@inertiajs/vue3'
 import axios from 'axios';
 
@@ -47,7 +47,7 @@ async function getBlock() {
     
 }
 
-onMounted(() => {
+onBeforeMount(() => {
     getBlock()
 
     // router.get('/api/block', {}, {

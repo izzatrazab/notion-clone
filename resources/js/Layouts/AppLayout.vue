@@ -56,7 +56,7 @@ const logout = () => {
                         </a>
                         </Link>
                     </li>
-                    <li>
+                    <li class='p-2' >
                         <button type="button"
                             class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                             aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
@@ -88,7 +88,6 @@ const logout = () => {
                             </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </aside>
@@ -113,7 +112,7 @@ const logout = () => {
                                 </button>
 
                                 <!-- Navigation Links -->
-                                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <div class="hidden space-x-8 sm:-my-px sm:flex">
                                     <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                         Dashboard
                                     </NavLink>
@@ -365,13 +364,10 @@ const logout = () => {
 
                 <header v-if="$slots.header" class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-
                         <slot name="header" />
                     </div>
                 </header>
 
-            <!-- Page Content -->
-            <!-- <Sidebar/> -->
             <main>
                 <slot />
             </main>

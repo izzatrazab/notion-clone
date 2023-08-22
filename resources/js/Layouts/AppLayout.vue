@@ -7,12 +7,6 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-import Sidebar from 'primevue/sidebar';
-import Button from "primevue/button"
-
-// theme and icons for primevue
-import "primevue/resources/themes/lara-light-indigo/theme.css";
-import 'primeicons/primeicons.css';
 
 
 defineProps({

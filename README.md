@@ -5,13 +5,13 @@ Low fidelity MVP. The target is to somehow clone notion.
 ## The Defined Problems
 
 1. Tend to forgot what tasks should be done.
-2. Keep track the order of completing the tasks (which one should be completed first).
+2. Hard to keep track the order of completing the tasks (which one should be completed first).
 3. Difficulty to track progress of each tasks.
 4. Tend to forget who accountable for a specific task
 
 ## Functional Requirement
 
-1. System able to create projects.
+1. System able to create list of projects.
 2. System able to add dates (deadline/period date).
 3. System allow user to search through the project using search bar.
 4. System allow user to customize project tables.

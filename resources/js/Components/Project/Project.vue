@@ -6,6 +6,10 @@ import { reactive, onBeforeMount } from 'vue'
 import { router } from '@inertiajs/vue3'
 import axios from 'axios';
 
+defineProps({
+  memoId: String,
+})
+
 let editor: EditorJS
 let form: { blocks: string } = reactive({
     blocks: ''
@@ -44,19 +48,10 @@ function createEditor(blocks: { id: string, type: string, data: { withHeadings: 
 async function getBlock() {
     const {data} = await axios.get('/api/block')
     createEditor(JSON.parse(data.blocks[0].json))
-    
 }
 
 onBeforeMount(() => {
     getBlock()
-
-    // router.get('/api/block', {}, {
-    //     preserveState: true,
-    //     onSuccess: ({ props }) => {
-    //         console.log(props.blocks);
-    //         createEditor(JSON.parse(props.blocks[0].json))
-    //     },
-    // })
 })
 
 </script>

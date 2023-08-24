@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlockController;
+use App\Http\Controllers\MemoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,12 +33,17 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
-  
 
+    Route::get('/dashboard/{memo_id}', [MemoController::class,'index'])->name('memo');
+  
 
     // fetch block
     Route::get('api/block', [BlockController::class,'show']);
 
     // store block
     Route::post('api/block', [BlockController::class,'store']);
+
+
+    // memo
+    Route::get('api/memo', [MemoController::class, 'show']);
 });

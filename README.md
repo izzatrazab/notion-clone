@@ -11,10 +11,10 @@ Low fidelity MVP. The target is to somehow clone notion.
 
 ## Functional Requirement
 
-1. System able to create list of projects.
+1. System able to create projects.
 2. System able to add dates (deadline/period date).
 3. System allow user to search through the project using search bar.
-4. System allow user to customize project tables.
+4. System allow user to assign tasks to someone else
 5. System allow user to access to other pages using sidebar.
 
 ## Non Functional Requirement

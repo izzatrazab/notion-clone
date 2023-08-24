@@ -24,7 +24,6 @@ class BlockController extends Controller
         return response()->json([
             'blocks' => $blocks
         ]);
-        // return $blocks;
     }
 
     // create or update

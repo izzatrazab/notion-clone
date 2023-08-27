@@ -24,7 +24,7 @@ kiv
 - Laravel (with Inertia)
 - Scaffold using Laravel Jetstream
 - Vue (typescript)
-- flowbite, flowbite-vue
+- vuetify
 - Mysql (i used xampp)
 - editorjs
 

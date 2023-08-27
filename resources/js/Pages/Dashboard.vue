@@ -15,7 +15,7 @@ import Project from '../Components/Project/Project.vue'
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div id='main' class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <Project />
+                    <!-- <Project /> -->
                 </div>
             </div>
         </div>

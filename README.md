@@ -1,6 +1,6 @@
 # Notion Clone
 
-Low fidelity MVP. The target is to somehow clone notion.
+Low fidelity MVP. The target is to somehow clone notion. (this oroject is onhold)
 
 ## The Defined Problems
 

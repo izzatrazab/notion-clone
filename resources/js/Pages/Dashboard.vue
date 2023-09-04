@@ -8,7 +8,7 @@ import Project from '../Components/Project/Project.vue'
     <AppLayout title="Dashboard">
         <template #header>
             <h1>
-                Dashbsoard
+                Dashboard
             </h1>
         </template>
         <!-- <Project /> -->

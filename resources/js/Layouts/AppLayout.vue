@@ -39,11 +39,10 @@ const logout = () => {
             <v-app-bar>
                 <v-app-bar-title>
                     <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                        Dashboard
+                            dashboard
                     </NavLink>
                 </v-app-bar-title>
                 <template v-slot:append>
-
                     <!-- Primary Navigation Menu -->
                     <div class="flex justify-between h-16">
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -76,7 +75,7 @@ const logout = () => {
                                     </v-list-item>
                                     <v-list-item>
                                         <template v-if="$page.props.auth.user.all_teams.length > 1">
-                                            <div class="border-t border-gray-200 dark:border-gray-600" />
+                                            <div class="border-t border-gray-200" />
 
                                             <div class="block px-4 py-2 text-xs text-gray-400">
                                                 Switch Teams
@@ -149,7 +148,7 @@ const logout = () => {
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
                             <button
-                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                                 @click="showingNavigationDropdown = !showingNavigationDropdown">
 
                                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -177,7 +176,7 @@ const logout = () => {
                         </div>
 
                         <!-- Responsive Settings Options -->
-                        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+                        <div class="pt-4 pb-1 border-t border-gray-200">
                             <div class="flex items-center px-4">
                                 <div v-if="$page.props.jetstream.managesProfilePhotos" class="shrink-0 mr-3">
                                     <img class="h-10 w-10 rounded-full object-cover"
@@ -185,7 +184,7 @@ const logout = () => {
                                 </div>
 
                                 <div>
-                                    <div class="font-medium text-base text-gray-800 dark:text-gray-200">
+                                    <div class="font-medium text-base text-gray-800">
                                         {{ $page.props.auth.user.name }}
                                     </div>
                                     <div class="font-medium text-sm text-gray-500">
@@ -213,7 +212,7 @@ const logout = () => {
 
                                 <!-- Team Management -->
                                 <template v-if="$page.props.jetstream.hasTeamFeatures">
-                                    <div class="border-t border-gray-200 dark:border-gray-600" />
+                                    <div class="border-t border-gray-200" />
 
                                     <div class="block px-4 py-2 text-xs text-gray-400">
                                         Manage Team
@@ -232,7 +231,7 @@ const logout = () => {
 
                                     <!-- Team Switcher -->
                                     <template v-if="$page.props.auth.user.all_teams.length > 1">
-                                        <div class="border-t border-gray-200 dark:border-gray-600" />
+                                        <div class="border-t border-gray-200" />
 
                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                             Switch Teams

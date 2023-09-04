@@ -38,11 +38,9 @@ const logout = () => {
         <v-layout>
             <v-app-bar>
                 <v-app-bar-title>
-                    <div class="hidden space-x-8 sm:-my-px sm:flex">
-                        <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </NavLink>
-                    </div>
+                    <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        Dashboard
+                    </NavLink>
                 </v-app-bar-title>
                 <template v-slot:append>
 
@@ -265,30 +263,13 @@ const logout = () => {
                 </template>
 
             </v-app-bar>
-
-            <!-- <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false">
-                <v-list-item :title="$page.props.auth.user.name" nav>
-                    <v-tooltip activator="parent" location="top">{{ $page.props.auth.user.name }}</v-tooltip>
-                    <template v-slot:append>
-                        <v-btn variant="text" :icon=" rail === true ? 'mdi-chevron-right' : 'mdi-chevron-left' "  @click.stop="rail = !rail"></v-btn>
-                    </template>
-                </v-list-item>
-
-                <v-divider />
-
-                <v-list density="compact" nav>
-                    <v-list-item prepend-icon="mdi-home-city" title="Example" value="example"></v-list-item>
-                </v-list>
-            </v-navigation-drawer> -->
-            <Sidebar/>
+            <Sidebar />
 
             <v-main>
-                <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+                <div class='p-6'>
                     <!-- Page Heading -->
-                    <header v-if="$slots.header" class="bg-white dark:bg-gray-800 shadow">
-                        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                            <slot name="header" />
-                        </div>
+                    <header v-if="$slots.header">
+                        <slot name="header" />
                     </header>
                     <slot />
                 </div>

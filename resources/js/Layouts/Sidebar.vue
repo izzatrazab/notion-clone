@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import axios from 'axios';
 import { onMounted } from 'vue';
+import SidebarMemo from './Sidebar-Memo.vue'
 
 
 let drawer = ref(true)
@@ -11,7 +12,6 @@ let memoNameList
 
 async function getMemoNameList() {
     const { data } = await axios.get('/api/memo')
-    console.log(data);
     memoNameList = data.memos
 }
 onMounted(() => {
@@ -30,20 +30,11 @@ onMounted(() => {
         </v-list-item>
 
         <v-divider />
-
-        <v-list density="compact" nav>
-            <v-list-group value='Memo'>
-                <template v-slot:activator="{ props }">
-                    <v-list-item v-bind="props" prepend-icon="mdi-note-text-outline" title="MEMO"></v-list-item>
-                </template>
-
-                <v-list-item v-for='memoName in memoNameList'>
-                    <Link v-bind:href="'/dashboard/' + memoName.id">
-                    {{ memoName.name }}
-                    </Link>
-                </v-list-item>
-                <v-list-item prepend-icon="mdi-plus" title="NEW" @click="console.log('d')" />
-            </v-list-group>
-        </v-list>
+        <SidebarMemo />
     </v-navigation-drawer>
 </template>
+<style>
+.side-bar-big-nav:hover {
+    text-decoration: underline;
+}
+</style>

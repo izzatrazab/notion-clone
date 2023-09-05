@@ -11,7 +11,7 @@ class Memo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'json_memo'
+        'user_id', 'json_memo', 'name'
     ];
 
     public function user(): BelongsTo

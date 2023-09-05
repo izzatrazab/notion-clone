@@ -34,9 +34,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
-    Route::get('/dashboard/{memo_id}', [MemoController::class,'index'])->name('memo');
-  
-
     // fetch block
     Route::get('api/block', [BlockController::class,'show']);
 
@@ -45,5 +42,10 @@ Route::middleware([
 
 
     // memo
-    Route::get('api/memo', [MemoController::class, 'show']);
+    Route::get('api/memo', [MemoController::class, 'indexName']);
+    Route::put('api/memo', [MemoController::class,'store']);
+    Route::post('api/memo', [MemoController::class,'create']);
+    Route::delete('api/memo', [MemoController::class,'delete']);
+    Route::get('/memo', [MemoController::class, 'index']);
+    Route::get('/memo/{memo_id}', [MemoController::class, 'show']);
 });

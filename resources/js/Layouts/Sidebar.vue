@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/vue3';
 import axios from 'axios';
 import { onMounted } from 'vue';
 import SidebarMemo from './Sidebar-Memo.vue'
+import SidebarAccount from './Sidebar-Account.vue'
 
 
 let drawer = ref(true)
@@ -30,6 +31,9 @@ onMounted(() => {
         </v-list-item>
 
         <v-divider />
+        <SidebarAccount/>
+        <v-divider />
+        
         <SidebarMemo />
     </v-navigation-drawer>
 </template>

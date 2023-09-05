@@ -36,7 +36,7 @@ const logout = () => {
         <Banner />
 
         <v-layout>
-            <v-app-bar density="compact">
+            <v-app-bar density="compact" :elevation="1" color='amber-accent-1'>
                 <v-app-bar-title>
                     <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                         dashboard
@@ -102,48 +102,7 @@ const logout = () => {
                                 </v-list>
                             </v-menu>
 
-                            <!-- manage account -->
-                            <v-menu>
-                                <template v-slot:activator="{ props }">
-                                    <button v-if="$page.props.jetstream.managesProfilePhotos"
-                                        class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                        <img class="h-8 w-8 rounded-full object-cover"
-                                            :src="$page.props.auth.user.profile_photo_url"
-                                            :alt="$page.props.auth.user.name">
-                                    </button>
-                                    <v-btn color="primary" dark v-bind="props">
-                                        {{ $page.props.auth.user.name }}
-                                        <v-icon icon='mdi-menu-down'></v-icon>
-                                    </v-btn>
-                                </template>
-                                <v-list>
-                                    <v-list-item>
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
-                                        </div>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-btn block>
-                                            <Link :href="route('profile.show')">Profile</Link>
-                                        </v-btn>
-                                    </v-list-item>
-                                    <v-list-item v-if="$page.props.jetstream.hasApiFeatures">
-                                        <Link :href="route('api-tokens.index')">API Tokens</Link>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <form @submit.prevent="logout">
-                                            <v-btn block type='submit'>
-                                                Log Out
-                                            </v-btn>
-                                        </form>
-                                    </v-list-item>
-                                </v-list>
-                            </v-menu>
                         </div>
-
-                        <!-- maybe usefull -->
-                        <!-- <v-app-bar-nav-icon @click="showingNavigationDropdown = !showingNavigationDropdown"/> -->
-
 
                 </template>
 

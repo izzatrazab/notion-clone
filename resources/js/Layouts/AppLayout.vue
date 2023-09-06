@@ -57,22 +57,6 @@ const logout = () => {
 
                                 <v-list>
                                     <v-list-item>
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Team
-                                        </div>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-btn block>
-                                            <Link :href="route('teams.show', $page.props.auth.user.current_team)">Team
-                                            Settings</Link>
-                                        </v-btn>
-                                    </v-list-item>
-                                    <v-list-item v-if="$page.props.jetstream.canCreateTeams">
-                                        <v-btn block>
-                                            <Link :href="route('teams.create')">Create New Team</Link>
-                                        </v-btn>
-                                    </v-list-item>
-                                    <v-list-item>
                                         <template v-if="$page.props.auth.user.all_teams.length > 1">
                                             <div class="border-t border-gray-200" />
 

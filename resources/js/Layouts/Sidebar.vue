@@ -1,9 +1,10 @@
 <script setup >
-import { ref } from 'vue';
+// af: Sidebar component encase all sidebar components (eg. Sidebar-Memo.vue, Sidebar-Account.vue)
+
 import SidebarMemo from './Sidebar-Memo.vue'
 import SidebarAccount from './Sidebar-Account.vue'
 import SidebarProject from './Sidebar-Project.vue';
-
+import { ref } from 'vue';
 
 let drawer = ref(true)
 let rail = ref(true)
@@ -15,19 +16,14 @@ let rail = ref(true)
         <v-list-item :title="$page.props.auth.user.name" nav>
             <template v-slot:append>
                 <v-btn variant="text" :icon="rail === true ? 'mdi-chevron-right' : 'mdi-chevron-left'"
-                    @click.stop="rail = !rail"></v-btn>
+                    @click.stop="rail = !rail" />
             </template>
         </v-list-item>
         <v-divider />
-        <SidebarAccount/>
+        <SidebarAccount />
         <v-divider />
-        <SidebarProject/>
+        <SidebarProject />
         <v-divider />
         <SidebarMemo />
     </v-navigation-drawer>
 </template>
-<style>
-.side-bar-big-nav:hover {
-    text-decoration: underline;
-}
-</style>

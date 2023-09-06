@@ -1,4 +1,6 @@
 <script setup>
+// af: Project dashboard (overall of all projects)
+
 import AppLayout from '@/Layouts/AppLayout.vue'
 import { Link } from '@inertiajs/vue3';
 
@@ -11,11 +13,10 @@ import { Link } from '@inertiajs/vue3';
             <h1 class="text-h6">
                 Project
             </h1>
-        </Link>
+            </Link>
         </template>
-iuhi
-
-
-
+        <section>
+            all project
+        </section>
     </AppLayout>
 </template>

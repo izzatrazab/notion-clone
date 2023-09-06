@@ -1,7 +1,14 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue'
+
+
 import EditorJS from '@editorjs/editorjs';
 import Table from '@editorjs/table';
+import Header from '@editorjs/header';
+import Checklist from '@editorjs/checklist';
+import NestedList from '@editorjs/nested-list';
+import editorjsNestedChecklist from '@calumk/editorjs-nested-checklist';
+
 import axios from 'axios';
 import { onMounted } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
@@ -24,12 +31,22 @@ function createEditor(block) {
     editor = new EditorJS({
         holder: 'editorjs',
         tools: {
+            Header,
+            list: {
+                class: NestedList,
+                inlineToolbar: true,
+                config: {
+                    defaultStyle: 'ordered'
+                },
+            },
+            nestedchecklist: editorjsNestedChecklist,
+            Checklist,
             table: {
                 class: Table,
                 inlineToolbar: true,
                 config: {
                     withHeadings: true,
-                },
+                }
             },
         },
         data: {
@@ -79,7 +96,7 @@ onMounted(() => {
     <AppLayout title="Memo">
         <template #header>
             <Link v-bind:href="'/memo'">
-            <h1 class="text-h6" >
+            <h1 class="text-h6">
                 Memo
             </h1>
             </Link>

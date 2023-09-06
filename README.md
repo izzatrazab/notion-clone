@@ -56,4 +56,9 @@ Click link below to view for some to view some diagrams in Draw io.
 
 
 
-
+Memo Module
+list of editor js tools used
+1. header ✅
+3. nested-list ✅
+4. nested checklist ✅
+5. table ✅

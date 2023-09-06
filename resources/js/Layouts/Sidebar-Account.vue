@@ -11,7 +11,7 @@ const logout = () => {
     <v-list density="compact" nav>
         <v-list-group value='Account'>
             <template v-slot:activator="{ props }">
-                <v-list-item title='ACCOUNT' v-bind="props" prepend-icon="mdi-account" />
+                <v-list-item :title="($page.props.auth.user.name).toUpperCase()" v-bind="props" prepend-icon="mdi-account" class='text-uppercase'/>
             </template>
             <Link :href="route('profile.show')">
             <v-list-item value='Profile' title='Profile' />

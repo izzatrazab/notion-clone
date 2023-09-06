@@ -3,6 +3,7 @@
 
 import SidebarMemo from './Sidebar-Memo.vue'
 import SidebarAccount from './Sidebar-Account.vue'
+import SidebarTeam from './Sidebar-Team.vue';
 import SidebarProject from './Sidebar-Project.vue';
 import { ref } from 'vue';
 
@@ -13,15 +14,18 @@ let rail = ref(true)
 
 <template>
     <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false">
-        <v-list-item :title="$page.props.auth.user.name" nav>
-            <template v-slot:append>
-                <v-btn variant="text" :icon="rail === true ? 'mdi-chevron-right' : 'mdi-chevron-left'"
-                    @click.stop="rail = !rail" />
-            </template>
-        </v-list-item>
+
+        <v-list density="compact" nav>
+            <v-list-item :title="$page.props.jetstream.hasTeamFeatures ? $page.props.auth.user.current_team.name.toUpperCase() : ''" 
+                :prepend-icon="rail === true ? 'mdi-chevron-right' : 'mdi-chevron-left'" @click.stop="rail = !rail" />
+        </v-list>
         <v-divider />
         <SidebarAccount />
         <v-divider />
+        <div v-if="$page.props.jetstream.hasTeamFeatures">
+            <SidebarTeam />
+            <v-divider />
+        </div>
         <SidebarProject />
         <v-divider />
         <SidebarMemo />

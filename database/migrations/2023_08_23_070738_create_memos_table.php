@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('json_memo');
+            $table->string('json_memo', 65535);
             $table->timestamps();
         });
     }

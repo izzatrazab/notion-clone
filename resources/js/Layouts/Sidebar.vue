@@ -19,12 +19,12 @@ let rail = ref(true)
             <v-list-item :title="$page.props.jetstream.hasTeamFeatures ? 'team: '+ $page.props.auth.user.current_team.name.toUpperCase() : ''" 
                 :prepend-icon="rail === true ? 'mdi-chevron-right' : 'mdi-chevron-left'" @click.stop="rail = !rail" />
         </v-list>
+        <SidebarProject />
+        <SidebarMemo />
         <SidebarAccount />
         <template v-if="$page.props.jetstream.hasTeamFeatures">
             <SidebarTeam />
             <SidebarSwitchTeam v-if='$page.props.auth.user.all_teams.length > 1'/>
         </template>
-        <SidebarProject />
-        <SidebarMemo />
     </v-navigation-drawer>
 </template>

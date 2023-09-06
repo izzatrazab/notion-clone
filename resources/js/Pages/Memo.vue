@@ -9,9 +9,9 @@ import Checklist from '@editorjs/checklist';
 import NestedList from '@editorjs/nested-list';
 import editorjsNestedChecklist from '@calumk/editorjs-nested-checklist';
 
-import axios from 'axios';
 import { onMounted } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
+import axios from 'axios';
 
 let editor
 let form = { blocks: '', memo_id: '' }
@@ -103,43 +103,46 @@ onMounted(() => {
         </template>
         <section v-if="memo !== null ? false : true">
             <!-- <MemoList/> -->
-            <v-table density='compact'>
-                <thead>
-                    <tr>
-                        <th class="text-left">
-                            no.
-                        </th>
-                        <th class="text-left">
-                            Memo Name
-                        </th>
-                        <th class="text-left">
-                            Last Updated
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(memo, index) in props.memos" :key="memo.id">
-                        <td>{{ index + 1 }}</td>
-                        <td>
-                            <Link v-bind:href="'/memo/' + memo.id">
-                            <span class='scale'>
-                                {{ memo.name }}
-                            </span>
-                            </Link>
-                        </td>
-                        <td>{{ memo.updated_at }}</td>
-                    </tr>
-                </tbody>
-            </v-table>
+            <v-card variant="outlined">
+                <v-table density='compact'>
+                    <thead>
+                        <tr>
+                            <th class="text-left">
+                                no.
+                            </th>
+                            <th class="text-left">
+                                Memo Name
+                            </th>
+                            <th class="text-left">
+                                Last Updated
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(memo, index) in props.memos" :key="memo.id">
+                            <td>{{ index + 1 }}</td>
+                            <td>
+                                <Link v-bind:href="'/memo/' + memo.id">
+                                <span class='scale'>
+                                    {{ memo.name }}
+                                </span>
+                                </Link>
+                            </td>
+                            <td>{{ memo.updated_at }}</td>
+                        </tr>
+                    </tbody>
+                </v-table>
+            </v-card>
         </section>
         <section v-else>
-            <h1 class='text-h4'>
-                {{ memo[0].name }}
-            </h1>
-            <v-btn color='primary' @click="saveMemo">save</v-btn>
-            <v-btn color='warning' @click="deleteMemo(memo[0].id)">delete</v-btn>
-            <div id='editorjs' />
-            <!-- </div> -->
+            <v-card variant="outlined">
+                <h1 class='text-h4'>
+                    {{ memo[0].name }}
+                </h1>
+                <v-btn color='primary' @click="saveMemo">save</v-btn>
+                <v-btn color='warning' @click="deleteMemo(memo[0].id)">delete</v-btn>
+                <div id='editorjs' />
+            </v-card>
         </section>
     </AppLayout>
 </template>

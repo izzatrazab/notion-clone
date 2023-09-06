@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BlockController;
 use App\Http\Controllers\MemoController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,13 +34,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
-    // fetch block
-    Route::get('api/block', [BlockController::class,'show']);
-
-    // store block
-    Route::post('api/block', [BlockController::class,'store']);
-
-
     // memo
     Route::get('api/memo', [MemoController::class, 'indexName']);
     Route::put('api/memo', [MemoController::class,'store']);
@@ -48,4 +41,7 @@ Route::middleware([
     Route::delete('api/memo', [MemoController::class,'delete']);
     Route::get('/memo', [MemoController::class, 'index']);
     Route::get('/memo/{memo_id}', [MemoController::class, 'show']);
+    
+    Route::get('/project', [ProjectController::class, 'index']);
+    Route::get('/project/{project_id}', [ProjectController::class, 'show']);
 });

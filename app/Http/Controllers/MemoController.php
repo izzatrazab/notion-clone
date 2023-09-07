@@ -14,6 +14,7 @@ class MemoController extends Controller
         $memos = Memo::select('name', 'id', 'updated_at')->where('user_id', auth()->id())->orderBy('updated_at','DESC')->get();
         return Inertia::render('Memo',['memos' => $memos]);
     }
+    
     public function indexName()
     {
         $memos = Memo::select('name', 'id')->where('user_id', auth()->id())->get();
@@ -27,18 +28,8 @@ class MemoController extends Controller
         $memo = Memo::select('name', 'id', 'json_memo')->where('user_id', auth()->id())->where('id', $memo_id)->get();
         return Inertia::render('Memo', ['memo' => $memo]);
     }
-
-    public function store(Request $request)
-    {
-        Memo::updateOrCreate(
-            ['user_id'   => auth()->id(), 'id' => $request->get('memo_id')],
-            [
-                'type' => 'table',
-                'json_memo' => $request->input('blocks')
-            ]
-        );
-    }
-
+    
+    // create a memo
     public function create()
     {
         try {
@@ -58,6 +49,18 @@ class MemoController extends Controller
             dd("MemoController, create function", $th);
         }
     }
+
+    public function store(Request $request)
+    {
+        Memo::updateOrCreate(
+            ['user_id'   => auth()->id(), 'id' => $request->get('memo_id')],
+            [
+                'type' => 'table',
+                'json_memo' => $request->input('blocks')
+            ]
+        );
+    }
+
 
     public function delete(Request $request){
         try {

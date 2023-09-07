@@ -32,16 +32,19 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+    // Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 
     // memo
     Route::get('api/memo', [MemoController::class, 'indexName']);
-    Route::put('api/memo', [MemoController::class,'store']);
     Route::post('api/memo', [MemoController::class,'create']);
+    Route::put('api/memo', [MemoController::class,'store']);
     Route::delete('api/memo', [MemoController::class,'delete']);
     Route::get('/memo', [MemoController::class, 'index']);
     Route::get('/memo/{memo_id}', [MemoController::class, 'show']);
     
-    Route::get('/project', [ProjectController::class, 'index']);
+    Route::get('/project', [ProjectController::class, 'index'])->name('project');
+    Route::post('/project', [ProjectController::class,'create']);
+    Route::put('/project', [ProjectController::class,'store']);
+    Route::get('/project/name', [ProjectController::class, 'indexName']);
     Route::get('/project/{project_id}', [ProjectController::class, 'show']);
 });

@@ -6,8 +6,8 @@ import Gantt from 'frappe-gantt'
 import { reactive } from 'vue'
 
 const props = defineProps({
-    project_id: {
-        type: String,
+    project: {
+        type: Object,
         default: "no id received"
     }
 })
@@ -20,17 +20,25 @@ let tasks = reactive([{
     end: '2016-12-31',
     progress: 20,
     dependencies: ''
+}, {
+    id: '3',
+    name: 'Revamp website',
+    start: '2016-12-28',
+    end: '2016-12-31',
+    progress: 20,
+    dependencies: '1',
+    priority: 'high'
 },
 {
     id: '2',
-    name: 'Revamp website',
+    name: 'Revamp website no2',
     start: '2016-12-28',
     end: '2016-12-31',
     progress: 20,
     dependencies: '1'
 }])
 
-function testing(){
+function testing() {
     tasks[0].progress++;
     gantt.refresh(tasks)
 }
@@ -38,7 +46,7 @@ function testing(){
 
 
 onMounted(() => {
-    console.log(tasks);
+    console.log(props.project);
 
     gantt = reactive(new Gantt("#gantt", tasks, {
         on_click: function (task) {
@@ -71,61 +79,75 @@ onMounted(() => {
     <AppLayout title="Project">
 
         <template #header>
-            <Link v-bind:href="'/project'">
             <h1 class="text-h6">
-                Project: {{ props.project_id }}
+                <Link v-bind:href="'/project'">
+                Project:
+                </Link>
+                {{ props.project.name }}
             </h1>
-            </Link>
+            <v-expansion-panels>
+                <v-expansion-panel title="Details">
+                    <v-expansion-panel-text>
+                        {{ props.project }}
+                    </v-expansion-panel-text>
+                </v-expansion-panel>
+            </v-expansion-panels>
         </template>
-
+        <v-divider :thickness="20"></v-divider>
         <section>
-            <v-card variant='outlined'>
+            <v-card>
                 <v-card-title>
                     Table
                 </v-card-title>
-                <v-btn @click='testing'>
-                    test
-                </v-btn>
-                <v-table density='compact'>
-                    <thead>
-                        <tr>
-                            <th class="text-left">
-                                Task Name
-                            </th>
+                <v-card-item>
 
-                            <th class="text-left">
-                                Progress
-                            </th>
-                            <th class="text-left">
-                                Start
-                            </th>
-                            <th class="text-left">
-                                End
-                            </th>
-                            <th class="text-left">
-                                Dependencies
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(task, index) in tasks" :key="task.id">
-                            <td>{{ task.name }}</td>
-                            <td>{{ task.progress }}%</td>
-                            <td>{{ task.start }}</td>
-                            <td>{{ task.end }}</td>
-                            <td>{{ task.dependencies }}</td>
-                        </tr>
-                    </tbody>
-                </v-table>
+                    <v-btn @click='testing'>
+                        test
+                    </v-btn>
+                    <v-table density='compact'>
+                        <thead>
+                            <tr>
+                                <th class="text-left">
+                                    Task Name
+                                </th>
+
+                                <th class="text-left">
+                                    Progress
+                                </th>
+                                <th class="text-left">
+                                    Start
+                                </th>
+                                <th class="text-left">
+                                    End
+                                </th>
+                                <th class="text-left">
+                                    Dependencies
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(task, index) in tasks" :key="task.id">
+                                <td>{{ task.name }}</td>
+                                <td>{{ task.progress }}%</td>
+                                <td>{{ task.start }}</td>
+                                <td>{{ task.end }}</td>
+                                <td>{{ task.dependencies }}</td>
+                            </tr>
+                        </tbody>
+                    </v-table>
+                </v-card-item>
+
             </v-card>
         </section>
-        <v-divider :thickness="5" class="border-opacity-25"></v-divider>
+        <v-divider :thickness="20" ></v-divider>
         <section>
-            <v-card variant='outlined'>
+            <v-card>
                 <v-card-title>
                     Gantt Chart
                 </v-card-title>
-                <svg id="gantt"></svg>
+                <v-card-item>
+                    <svg id="gantt"/>
+                </v-card-item>
             </v-card>
         </section>
 

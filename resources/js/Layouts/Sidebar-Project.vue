@@ -7,23 +7,23 @@ import axios from 'axios';
 let projectNameList
 
 async function getProjectNameList() {
-    const { data } = await axios.get('/api/project')
+    const { data } = await axios.get('/project/name')
     projectNameList = data.projects
 }
 
 async function createProject() {
-    // const { data } = await axios.post('/api/project')
-    // console.log(data);
-    // if (data.project_id) {
-    //     //success create new memo
-    //     router.visit('/project/' + data.project_id)
-    //     return
-    // }
-    // console.log('create new project failed');
+    const { data } = await axios.post('/project')
+    console.log(data);
+    if (data.project_id) {
+        //success create new project
+        router.visit('/project/' + data.project_id)
+        return
+    }
+    console.log('create new project failed');
 }
 
 onMounted(() => {
-    // getProjectNameList()
+    getProjectNameList()
 })
 </script>
 

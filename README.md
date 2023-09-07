@@ -39,26 +39,29 @@ Click link below to view for some to view some diagrams in Draw io.
 
 ## Modules
 
-| Modules                   | Desc                                                          |
-| -                         | -                                                             |
-| 🟢 Create Project         | project is like a list table                                  |
-| 🟢 Create Project Template| can create table template with custom column (for project)    |
-| 🟢 Create Task            | task is like a list table but with checklist column           |
-| 🟢 Create Task Template   | can create table template with custom column (for task)       |
-| 🟡 Task Flow              | Some task need to done first before other task, flow here means to block certain task before specific task is completed   |
-| 🟡 Task Pre Requisite     | related to task flow, requirement for a task to be available  |
-| 🟢 User, Team             | project can has multiple member                               |
-| 🟢 PIC, Team lead, (role) | role of each member in a project (eg. admin, editor, viewer)  |
-| 🟢 Add, remove members    | add new member or remove member                               |
-| 🟢 Notification           | probably just email notification                              |
-| 🟢 Client                 | hmmm ????                                                     |
-| 🔴 Diagram editor         | probably gantt chart                                          |
+| ✅ | Modules                   | Desc                                                          |
+|  -  | -                         | -                                                             |
+| ✅ | 🟢 Create Project         | project is like a list table                                  |
+|     | 🟢 Create Project Template| can create table template with custom column (for project)    |
+|     | 🟢 Create Task            | task is like a list table but with checklist column           |
+|     | 🟢 Create Task Template   | can create table template with custom column (for task)       |
+|     | 🟡 Task Flow              | Some task need to done first before other task, flow here means to block certain task before specific task is completed   |
+|     | 🟡 Task Pre Requisite     | related to task flow, requirement for a task to be available  |
+|     | 🟢 User, Team             | project can has multiple member                               |
+|     | 🟢 PIC, Team lead, (role) | role of each member in a project (eg. admin, editor, viewer)  |
+|     | 🟢 Add, remove members    | add new member or remove member                               |
+|     | 🟢 Notification           | probably just email notification                              |
+|     | 🟢 Client                 | hmmm ????                                                     |
+|     | 🔴 Diagram editor         | probably gantt chart                                          |
 
 
 
-Memo Module
+### Memo Module
 list of editor js tools used
 1. header ✅
 3. nested-list ✅
 4. nested checklist ✅
 5. table ✅
+
+### Project Module
+

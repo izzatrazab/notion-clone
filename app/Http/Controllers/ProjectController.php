@@ -24,7 +24,7 @@ class ProjectController extends Controller
 
     public function show(String $project_id)
     {
-        $project = Project::select('id','name', 'start', 'end')->where('user_id', auth()->id())->where('id', $project_id)->first();
+        $project = Project::select('id', 'name', 'start', 'end')->where('user_id', auth()->id())->where('id', $project_id)->first();
         return Inertia::render('Project/show', ['project' => $project]);
     }
 
@@ -44,10 +44,25 @@ class ProjectController extends Controller
             return response()->json([
                 'project_id' => $new_project->id
             ]);
-            
         } catch (\Throwable $th) {
             return response()->json(['status' => false]);
             dd("ProjectController, create function", $th);
         }
+    }
+
+    // update a project
+    public function store(Request $request)
+    {
+        Project::updateOrCreate(
+            [
+                'user_id' => auth()->id(),
+                'id' => $request->get('project_id')
+            ],
+            [
+                'name' => $request->get('name'),
+                'start' => $request->get('start'),
+                'end' => $request->get('end')
+            ]
+        );
     }
 }

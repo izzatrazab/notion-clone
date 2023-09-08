@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('project_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->date('start')->nullable();
-            $table->date('end')->nullable();
+            $table->date('start');
+            $table->date('end');
             $table->integer('progress');
             $table->string('dependencies');
             $table->string('priority');

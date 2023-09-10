@@ -17,7 +17,6 @@ import Project from '../Components/Project/Project.vue'
 
 <style>
 #main {
-    /* color: white; */
     padding: 10px;
 }
 </style>

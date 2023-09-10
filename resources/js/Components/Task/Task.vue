@@ -30,6 +30,7 @@ onMounted(async () => {
     });
     if (tasks.length !== 0)
         createGantt()
+
 })
 
 function createGantt() {
@@ -154,12 +155,12 @@ async function saveProgress(task_id, index) {
     try {
         const { data } = await axios.put(`/task/progress`, {
             task_id,
-            progress : tasks[index].progress
+            progress: tasks[index].progress
         })
         tempProgress = null
         console.log(data.status);
         tasksGantt.refresh(tasks)
-        
+
     } catch (error) {
         console.log(error);
     }
@@ -194,23 +195,24 @@ function onFocusProgress(currentProgress) {
                             <tr :key='element.id'>
                                 <td>{{ element.name }}</td>
                                 <td>
-                                    <v-text-field density="compact" variant="underlined" v-model='element.progress'
+                                    <v-text-field density="compact" variant="plain" v-model='element.progress'
                                         @focus='onFocusProgress(element.progress)'
                                         @keyup.enter="saveProgress(element.id, index)" @blur='() => {
-                                            if(tempProgress !== null){
+                                            if (tempProgress !== null) {
                                                 element.progress = tempProgress
                                                 tempProgress = null
                                             }
-                                        }' :placeholder='`${element.progress} %`' hide-details></v-text-field>%
+                                        }' :placeholder='`${element.progress} %`' hide-details
+                                        append-icon="mdi-percent-outline"></v-text-field>
                                 </td>
                                 <td>
                                     <VueDatePicker format='yyyy-MM-dd' v-model="element.startTemp"
-                                        @update:model-value="handleStartDate(index)">
+                                        @update:model-value="handleStartDate(index)" dark>
                                     </VueDatePicker>
                                 </td>
                                 <td>
                                     <VueDatePicker format='yyyy-MM-dd' v-model="element.endTemp"
-                                        @update:model-value="handleEndDate(index)">
+                                        @update:model-value="handleEndDate(index)" dark>
                                     </VueDatePicker>
                                 </td>
                                 <td>
@@ -224,7 +226,7 @@ function onFocusProgress(currentProgress) {
                                             </v-btn>
                                         </template>
 
-                                        <v-card >
+                                        <v-card>
                                             <v-card-item>
                                                 <v-checkbox v-for="task in tasks" :key="task.id"
                                                     v-model='element.dependencies' :label="task.name" :value="task.id"
@@ -249,7 +251,7 @@ function onFocusProgress(currentProgress) {
             </v-card-item>
         </v-card>
     </section>
-    <v-divider :thickness="20"></v-divider>
+    <v-divider :thickness="20" class='border-opacity-0'></v-divider>
     <section>
         <v-card>
             <v-card-title>

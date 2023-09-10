@@ -1,5 +1,5 @@
 // import './bootstrap';
-import '../css/app.css';
+// import '../css/app.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -15,7 +15,7 @@ const vuetify = createVuetify({
     components,
     directives,
     theme:{
-        defaultTheme:'light'
+        defaultTheme:'dark',
     }
 })
 

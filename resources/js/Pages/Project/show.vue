@@ -63,21 +63,20 @@ async function updateProject() {
                             <v-container>
                                 <v-row align='end'>
                                     <v-col cols="12" md="4">
-                                        <v-text-field v-model="props.project.name" :counter="10" label="Project name"
-                                            hide-details></v-text-field>
+                                        <v-text-field v-model="props.project.name" label="Project Name" hide-details variant='solo'></v-text-field>
                                     </v-col>
                                     <v-col cols="12" md="4">
-                                        <VueDatePicker v-model="date" range format='yyyy-MM-dd'></VueDatePicker>
+                                        <VueDatePicker v-model="date" range format='yyyy-MM-dd' dark></VueDatePicker>
                                     </v-col>
                                 </v-row>
-                                <v-btn type="submit" color='primary' class="mt-2">update</v-btn>
+                                <v-btn type="submit" color='primary' class="mt-2" rounded='xl'>update</v-btn>
                             </v-container>
                         </v-form>
                     </v-expansion-panel-text>
                 </v-expansion-panel>
             </v-expansion-panels>
         </template>
-        <v-divider :thickness="20"></v-divider>
+        <v-divider :thickness="20" class='border-opacity-0'></v-divider>
         <Task :project_id='props.project.id' />
     </AppLayout>
 </template>

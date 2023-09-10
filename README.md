@@ -43,7 +43,7 @@ Click link below to view for some to view some diagrams in Draw io.
 |  -  | -                         | -                                                             |
 | ✅ | 🟢 Create Project         | project is like a list table                                  |
 |     | 🟢 Create Project Template| can create table template with custom column (for project)    |
-|     | 🟢 Create Task            | task is like a list table but with checklist column           |
+| ✅ | 🟢 Create Task            | task is like a list table but with checklist column           |
 |     | 🟢 Create Task Template   | can create table template with custom column (for task)       |
 |     | 🟡 Task Flow              | Some task need to done first before other task, flow here means to block certain task before specific task is completed   |
 |     | 🟡 Task Pre Requisite     | related to task flow, requirement for a task to be available  |
@@ -52,7 +52,7 @@ Click link below to view for some to view some diagrams in Draw io.
 |     | 🟢 Add, remove members    | add new member or remove member                               |
 |     | 🟢 Notification           | probably just email notification                              |
 |     | 🟢 Client                 | hmmm ????                                                     |
-|     | 🔴 Diagram editor         | probably gantt chart                                          |
+| ✅/2| 🔴 Diagram editor         | probably gantt chart                                          |
 
 
 

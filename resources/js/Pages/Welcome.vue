@@ -1,6 +1,5 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-import Welcome from '@/Components/Welcome.vue';
 
 defineProps({
     canLogin: Boolean,
@@ -10,17 +9,21 @@ defineProps({
 });
 </script>
 
-<template>
+<template >
     <Head title="Welcome" />
-    <div class='d-flex align-center justify-center min-h-screen'
-        style='background-image: url(https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format); background-size: cover;'>
+    <div class='d-flex align-center justify-center h-screen'>
         <v-card class='text-center'>
             <template v-if="canLogin">
                 <v-card-title>
                     Welcome back
                 </v-card-title>
                 <v-card-item>
-                    goFlow: A Project Management Tool in the making
+                    <p>
+                        goFlow: A Project Management Tool in the making
+                    </p>
+                    <p>
+                        This is suppose to be a landing/welcome page
+                    </p>
                 </v-card-item>
                 <v-card-actions class='text-center'>
                     <Link v-if="$page.props.auth.user" :href="route('project')">

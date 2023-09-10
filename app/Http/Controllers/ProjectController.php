@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -25,7 +26,9 @@ class ProjectController extends Controller
     public function show(String $project_id)
     {
         $project = Project::select('id', 'name', 'start', 'end')->where('user_id', auth()->id())->where('id', $project_id)->first();
-        return Inertia::render('Project/show', ['project' => $project]);
+        $tasks = Task::select('id', 'name', 'start', 'end', 'progress', 'dependencies', 'priority')->where('project_id', $project_id)->get();
+        
+        return Inertia::render('Project/show', ['project' => $project, 'tasks' => $tasks]);
     }
 
     // create a project

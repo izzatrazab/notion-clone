@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('progress');
             $table->string('dependencies');
             $table->string('priority');
+            $table->integer('order');
             $table->timestamps();
         });
     }

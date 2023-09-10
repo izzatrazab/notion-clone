@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -47,4 +48,11 @@ Route::middleware([
     Route::put('/project', [ProjectController::class,'store']);
     Route::get('/project/name', [ProjectController::class, 'indexName']);
     Route::get('/project/{project_id}', [ProjectController::class, 'show']);
+
+    Route::get('tasks/{project_id}', [TaskController::class, 'index']);
+    Route::post('/task', [TaskController::class, 'create']);
+    Route::put('/task/progress', [TaskController::class, 'updateProgress']);
+    Route::put('/task/startdate', [TaskController::class, 'updateStartDate']);
+    Route::put('/task/enddate', [TaskController::class, 'updateEndDate']);
+    Route::put('tasks/reorder', [TaskController::class, 'reorder']);
 });

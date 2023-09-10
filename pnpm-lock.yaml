@@ -23,8 +23,8 @@ dependencies:
     specifier: ^7.2.96
     version: 7.2.96
   '@vuepic/vue-datepicker':
-    specifier: ^6.0.3
-    version: 6.0.3(vue@3.3.4)
+    specifier: ^6.1.0
+    version: 6.1.0(vue@3.3.4)
   frappe-gantt:
     specifier: ^0.6.1
     version: 0.6.1
@@ -102,7 +102,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.22.15
+      '@babel/types': 7.22.17
 
   /@babel/runtime@7.22.15:
     resolution: {integrity: sha512-T0O+aa+4w0u06iNmapipJXMV4HoUir03hpx3/YqXXhu9xim3w+dVphjFWl1OH8NbZHw5Lbm9k45drDkgq2VNNA==}
@@ -111,8 +111,8 @@ packages:
       regenerator-runtime: 0.14.0
     dev: false
 
-  /@babel/types@7.22.15:
-    resolution: {integrity: sha512-X+NLXr0N8XXmN5ZsaQdm9U2SSC3UbIYq/doL++sueHOTisgZHoKaQtZxGuV2cUPQHMfjKEfg/g6oy7Hm6SKFtA==}
+  /@babel/types@7.22.17:
+    resolution: {integrity: sha512-YSQPHLFtQNE5xN9tHuZnzu8vPr61wVTBZdfv1meex1NBosa4iT05k/Jw06ddJugi4bk7The/oSwQGFcksmEJQg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.22.5
@@ -558,8 +558,8 @@ packages:
   /@vue/shared@3.3.4:
     resolution: {integrity: sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==}
 
-  /@vuepic/vue-datepicker@6.0.3(vue@3.3.4):
-    resolution: {integrity: sha512-LxUZfxEsu6sSti/3pdkYO6NxwhF8mXSUhuINWEXhDHnfi0kyDgAIbJPJPf32WJLyoXYbuevOJbSYhFt8FCxhlA==}
+  /@vuepic/vue-datepicker@6.1.0(vue@3.3.4):
+    resolution: {integrity: sha512-hma+oPTM7wgiVfJKdlp9yiXaiNZUIrSJANoAvwGr4sXBTNaa6udRMqmLkNcdSUgHGxrcV5hZkfI7g27s1dUtIQ==}
     engines: {node: '>=14'}
     peerDependencies:
       vue: '>=3.2.0'
@@ -597,7 +597,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001529
+      caniuse-lite: 1.0.30001532
       fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -643,8 +643,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001529
-      electron-to-chromium: 1.4.512
+      caniuse-lite: 1.0.30001532
+      electron-to-chromium: 1.4.513
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
     dev: true
@@ -661,8 +661,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001529:
-    resolution: {integrity: sha512-n2pUQYGAkrLG4QYj2desAh+NqsJpHbNmVZz87imptDdxLAtjxary7Df/psdfyDGmskJK/9Dt9cPnx5RZ3CU4Og==}
+  /caniuse-lite@1.0.30001532:
+    resolution: {integrity: sha512-FbDFnNat3nMnrROzqrsg314zhqN5LGQ1kyyMk2opcrwGbVGpHRhgCWtAgD5YJUqNAiQ+dklreil/c3Qf1dfCTw==}
     dev: true
 
   /chokidar@3.5.3:
@@ -738,8 +738,8 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
-  /electron-to-chromium@1.4.512:
-    resolution: {integrity: sha512-1W8wRbYlQE4ph7eoj3TJ+uqwO6+xvAE/L+KGU7WTQQvX3tnSIGZAb90MTsMoJqzntamiwJhBAj4WZmygXhsOUg==}
+  /electron-to-chromium@1.4.513:
+    resolution: {integrity: sha512-cOB0xcInjm+E5qIssHeXJ29BaUyWpMyFKT5RB3bsLENDheCja0wMkHJyiPl0NBE/VzDI7JDuNEQWhe6RitEUcw==}
     dev: true
 
   /esbuild@0.18.20:
